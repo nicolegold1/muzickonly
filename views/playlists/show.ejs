@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playlist Details</title>
+</head>
+<body>
+  <header>
+    <h3>MuzickOnly</h3>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/playlists/new">Create a Playlist</a>
+    </nav>
+  </header>
+  <main>
+    <h1><%= playlist.name %></h1>
+    <ul>
+      <li>Mood: <%= playlist.mood %> </li>
+      <li>Description: <%= playlist.description %> </li>
+      <ul>
+        <li>Sad Boy Song 1</li>
+        <li>Sad Boy Song 2</li>
+        <li>Sad Boy Song 3</li>
+        <li>Sad Boy Song 4</li>
+      </ul>
+    </ul>
+  </main>
+</body>
+</html>

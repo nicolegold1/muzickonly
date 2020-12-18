@@ -36,12 +36,27 @@ router.get("/new", function(req, res){
 
 // Create - POST - /playlists -> Functional
 router.post("/", function(req, res){
-    return res.send("Functional Route");
+    //mongoose
+    db.Playlist.create(req.body, function(err, createdPlaylist){
+
+      if(err) return res.send(err);
+
+      return res.redirect("/playlists");
+    });
+
 });
 
 // Show - GET - /playlists/index -> Presentation
 router.get("/:id", function(req, res){
-    res.send("Playlist Show Details");
+  const id =(req.params.id)
+    //mongoose
+    db.Playlist.findById(id, function(err, foundPlaylist){
+
+      if (err) return res.send(err)
+
+      const context = { playlist: foundPlaylist };
+      return res.render("playlists/show", context);
+    });
 });
 
 // Edit - GET - /playlists/index/edit -> Presentational Form
