@@ -18,7 +18,15 @@ const db = require("../models");
 
 // Index - GET - /playlists -> Presentational 
 router.get("/", function(req, res){
-    return res.send("Playlist Index");
+  //mongoose
+  db.Playlist.find({}, function(err, allPlaylists){
+
+    if(err) return res.send(err);
+
+    const context = { playlists: allPlaylists }
+    return res.render("playlists/index", context);
+  });
+
 });
 
 // New - GET - /playlists/new -> Presentational Form
