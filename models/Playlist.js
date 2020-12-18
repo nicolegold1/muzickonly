@@ -5,7 +5,7 @@ const playlistSchema = new mongoose.Schema(
   {
     name: { type: String, required: true, unique: true },
     mood: { type: String, required: true },
-    description: { type: String, maxlength: 240 }
+    description: { type: String, required: true }
   },
   { timestamps: true }
 );

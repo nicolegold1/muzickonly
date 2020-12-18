@@ -31,7 +31,7 @@ router.get("/", function(req, res){
 
 // New - GET - /playlists/new -> Presentational Form
 router.get("/new", function(req, res){
-    return res.send("New Playlist Form");
+    return res.render("playlists/new");
 });
 
 // Create - POST - /playlists -> Functional

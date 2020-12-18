@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create a Playlist</title>
+</head>
+<body>
+  <header>
+    <h3>MuzickOnly</h3>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/playlists">Explore Playlists</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Create a Playlist</h1>
+
+    <form action="/playlists" method="POST">
+      <p>
+        <input type="text" name="name" placeholder ="Playlist Name" required >
+      </p>
+      <p>
+      <select name="mood" >
+        <option default>Select a Mood</option>
+        <option value="happy">Happy</option>
+        <option value="sad">Sad</option>
+        <option value="angry">Angry</option>
+        <option value="romantic">Romantic</option>
+        <option value="focused">Focused</option>
+        <option value="dancy">Dancy</option>
+        <option value="chill">Chill</option>
+        <option value="motivated">Motivated</option>
+      </select>
+      </p>
+      <p>
+      <textarea type="text" name="description" placeholder="Playlist description" cols="25" rows="4" required maxlength="240"></textarea>
+      </p>
+      <input type="submit" value="Create Playlist">
+    </form>
+  </main>
+  
+</body>
+</html>
