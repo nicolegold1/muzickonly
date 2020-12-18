@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <h3>MuzickOnly</h3>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/playlists">Explore Playlists</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Update <%= playlist.name %> Details </h1>
+
+    <form action="/playlists/<%= playlist._id %>?_method=PUT" method="POST">
+      <p>
+        <input type="text" name="name" placeholder ="<%= playlist.name %> " required >
+      </p>
+      <p>
+      <select name="mood" >
+        <option default><%= playlist.mood %></option>
+        <option value="Happy">Happy</option>
+        <option value="Sad">Sad</option>
+        <option value="Angry">Angry</option>
+        <option value="Romantic">Romantic</option>
+        <option value="Focused">Focused</option>
+        <option value="Dancy">Dancy</option>
+        <option value="Chill">Chill</option>
+        <option value="Motivated">Motivated</option>
+      </select>
+      </p>
+      <p>
+      <textarea type="text" name="description" placeholder="<%= playlist.description %> " cols="25" rows="4" required maxlength="240"></textarea>
+      </p>
+      <input type="submit" value="Update Playlist">
+    </form>
+  </main>
+
+</body>
+</html>

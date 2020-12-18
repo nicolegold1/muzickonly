@@ -26,7 +26,6 @@ router.get("/", function(req, res){
     const context = { playlists: allPlaylists }
     return res.render("playlists/index", context);
   });
-
 });
 
 // New - GET - /playlists/new -> Presentational Form
@@ -43,16 +42,15 @@ router.post("/", function(req, res){
 
       return res.redirect("/playlists");
     });
-
 });
 
 // Show - GET - /playlists/index -> Presentation
 router.get("/:id", function(req, res){
-  const id =(req.params.id)
+  const id = req.params.id;
     //mongoose
     db.Playlist.findById(id, function(err, foundPlaylist){
 
-      if (err) return res.send(err)
+      if(err) return res.send(err)
 
       const context = { playlist: foundPlaylist };
       return res.render("playlists/show", context);
@@ -61,7 +59,15 @@ router.get("/:id", function(req, res){
 
 // Edit - GET - /playlists/index/edit -> Presentational Form
 router.get("/:id/edit", function(req, res){
-    res.send("Playlist Edit Form");
+  const id = req.params.id;
+    //mongoose
+    db.Playlist.findById(id, function(err, foundPlaylist){
+
+      if(err) return res.send(err);
+
+      const context = { playlist: foundPlaylist };
+      return res.render("playlists/edit", context)
+    });
 });
 
 // Update - PUT/PATCH - /playlists/index -> Functional
