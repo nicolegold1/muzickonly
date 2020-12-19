@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Song Form</title>
+</head>
+<header>
+    <h3>MuzickOnly</h3>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/song">Add New Song</a>
+      </nav>
+</header>
+<main>
+    <h1>Add New Song</h1>
+    <form action="/songs" method="POST">
+        <p>
+          <input type="Title" name="name" placeholder ="Title Name" required >
+        </p>
+    <form action="/songs" method="POST">
+            <p>
+              <input type="Artist" name="name" placeholder ="Artist Name" required >
+            </p>
+    <p>
+    <select name="Playlist">
+    <option default>Artist</option>
+    <option value="Artist 1">Artist</option>
+    <option value="Artist 2">Artist</option>
+    <option value="Artist 3">Artist</option>
+ </select>
+    </p>
+    <input type="submit" value="Add New Song">
+    </form>
+</main>
+
+<body>
+    
+</body>
+</html>
