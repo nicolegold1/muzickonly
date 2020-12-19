@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist Names</title>
+</head>
+<body>
+    <head>
+    <h3>MuzickOnly</h3>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/song-titles/new">List of songs</a>
+      </nav>
+</head>
+<main>
+    <h1>Choose Songs</h1>
+    <ul>
+        <% songs.forEach(playlist => { %>
+            <li>
+              <a href="/songs/<%= song._id %> "> <%= song.name %>  </a>
+            </li>
+           <% }) %>
+     </ul>
+     <button>submit</button>
+
+    </ul>
+    
+</main>
+</body>
+</html>
