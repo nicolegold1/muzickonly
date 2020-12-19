@@ -116,7 +116,7 @@ router.put("/:index", function(request, response){
     const songLocation = db.Song.findIndex(function(song){
         return song._id === parseInt(index)
     
-    }};
+    });
     
     db.Song.findByIdAndUpdate(
         id,
@@ -135,7 +135,7 @@ router.put("/:index", function(request, response){
             return response.redirect(`/songs/${updatedSong._id}`);
         }
     }
-
-}
+    );
+});
 
 module.exports = router;
