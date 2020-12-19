@@ -24,7 +24,7 @@ app.use(methodOverride("_method"));
 
 /* ==== Routes/Controllers  ==== */
 app.use("/playlists", controllers.playlists);
-//app.use("/songs", controllers.songs);
+app.use("/songs", controllers.songs);
 
 // Home Routes
 app.get("/", function(req,res){
