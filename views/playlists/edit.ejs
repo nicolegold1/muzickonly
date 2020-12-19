@@ -18,7 +18,7 @@
 
     <form action="/playlists/<%= playlist._id %>?_method=PUT" method="POST">
       <p>
-        <input type="text" name="name" placeholder ="<%= playlist.name %> " required >
+        <input type="text" name="name" value="<%= playlist.name %>" required >
       </p>
       <p>
       <select name="mood" >
@@ -34,7 +34,7 @@
       </select>
       </p>
       <p>
-      <textarea type="text" name="description" placeholder="<%= playlist.description %> " cols="25" rows="4" required maxlength="240"></textarea>
+      <textarea type="text" name="description" placeholder="<%= playlist.description %> " cols="25" rows="4" required maxlength="240"><%= playlist.description %></textarea>
       </p>
       <input type="submit" value="Update Playlist">
     </form>

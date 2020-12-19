@@ -72,7 +72,21 @@ router.get("/:id/edit", function(req, res){
 
 // Update - PUT/PATCH - /playlists/index -> Functional
 router.put("/:id", function(req, res){
-  res.send("Playlist update route");
+  db.Playlist.findByIdAndUpdate(
+    req.params.id,
+    {
+      $set: {
+        ...req.body
+      }
+    },
+    { new: true},
+    function(err, updatedPlaylist){
+      
+      if(err) return res.send(err);
+
+      return res.redirect(`/playlists/${updatedPlaylist._id}`);
+    }
+  );
 });
 
 // Delete - DELETE - /playlist/index -> Functional
