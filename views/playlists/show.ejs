@@ -10,6 +10,7 @@
     <h3>MuzickOnly</h3>
     <nav>
       <a href="/">Home</a>
+      <a href="/playlists">Explore Playlists</a>
       <a href="/playlists/new">Create a Playlist</a>
     </nav>
   </header>
@@ -26,6 +27,9 @@
         <li>Sad Boy Song 4</li>
       </ul>
     </ul>
+    <form action="/playlists/<%= playlist._id %>?_method=DELETE" method="POST">
+      <input type="submit" value="Delete Playlist">
+    </form>
   </main>
 </body>
 </html>

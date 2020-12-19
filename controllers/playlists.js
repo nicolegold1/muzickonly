@@ -72,6 +72,7 @@ router.get("/:id/edit", function(req, res){
 
 // Update - PUT/PATCH - /playlists/index -> Functional
 router.put("/:id", function(req, res){
+  //mongoose
   db.Playlist.findByIdAndUpdate(
     req.params.id,
     {
@@ -91,7 +92,13 @@ router.put("/:id", function(req, res){
 
 // Delete - DELETE - /playlist/index -> Functional
 router.delete("/:id", function(req, res){
-  res.send("Deleted Playlist");
+  //mongoose
+  db.Playlist.findByIdAndDelete(req.params.id, function(err, deletedPlaylist){
+    
+    if(err) return res.send(err);
+
+    return res.redirect("/playlists");
+  });
 });
 
 module.exports = router;
