@@ -1,9 +1,7 @@
-const { request, response } = require("express");
 const express = require("express");
-const { db } = require("../models/Song");
 const router = express.Router();
+const db = require("../models");
 
-module.exports = router;
 
 // Rest Routes
 /* 
@@ -20,7 +18,7 @@ module.exports = router;
 
 //router.get -> req, res === express
 
-router.get("/", function(req, res) {
+router.get("/", function(request, response) {
 
     db.Song.find({}, function(error, allSong){
         if(error) {
@@ -28,10 +26,19 @@ router.get("/", function(req, res) {
             return response.send("Internal Server Error");
         }else {
             const context ={songs: allSong}
-            return response.render("song/index", context);
+            return response.render("songs/index", context);
         }
     });
 });
+
+// song new route
+
+router.get("/new", function (request, response) {
+	response.render("songs/new");
+});
+
+
+
 
 // song create - receive data from the new form and create a new song in our playlist
 // create -POST -/songs ->functional
@@ -55,7 +62,7 @@ db.Song.create(request.body, function(error, createdSong){
 router.get("/:id", function(request, response) {
     const id =request.params.id;
 
-    db.Song.findbyId(id, function(error,foundSong){
+    db.Song.findById(id, function(error,foundSong){
 
         if(error) {
             console.log(error);
@@ -137,5 +144,7 @@ router.put("/:index", function(request, response){
     }
     );
 });
+
+
 
 module.exports = router;

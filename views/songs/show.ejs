@@ -9,12 +9,15 @@
   <header>
   <nav></nav>
   <a href="/">Home</a>
-  <a href="/songs"> Explore Songs</a>
+  <a href="/songs">Songs</a>
 </nav>
 </header>
 </body>
 <main>
-  <h1><%= song.name %></h1>
-  <% 
+  <h1>Song Detail</h1>
+  
+  <p><%= song.title %> - <%= song.artist%></p>
+  <a href="/songs/<%= song._id %>/edit">Edit Song Details</a> 
+  
 </main>
 </html>
