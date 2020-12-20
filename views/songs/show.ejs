@@ -18,6 +18,8 @@
   
   <p><%= song.title %> - <%= song.artist%></p>
   <a href="/songs/<%= song._id %>/edit">Edit Song Details</a> 
-  
+  <form action="/songs/<%=song._id%>?_method=DELETE" method=POST>
+    <input type="submit" value="Delete Song">
+  </form>
 </main>
 </html>
