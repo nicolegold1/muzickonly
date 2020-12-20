@@ -34,7 +34,15 @@ router.get("/", function(request, response) {
 // song new route
 
 router.get("/new", function (request, response) {
-	response.render("songs/new");
+    db.Playlist.find({}, function(err,
+        foundPlaylists) {
+            if(err) return response.send(err);
+
+            const context = {
+                playlists: foundPlaylists
+            };
+            response.render("songs/new", context);
+        });
 });
 
 
