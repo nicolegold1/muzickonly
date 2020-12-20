@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Song Form</title>
 </head>
+<body>
 <header>
     <h3>MuzickOnly</h3>
     <nav>
@@ -21,12 +22,16 @@
         <p>
           <input type="text" name="artist" placeholder ="Artist Name" required >
         </p>
-   
-        <input type="submit" value="Add New Song">
+        <select name="playlist">
+            <option default>Select a playlist</option>
+            <% playlists.forEach(playlist => { %>
+                <option value="<%= playlist._id %>">
+                    <%=playlist.name %>
+                </option>  
+            <% }) %>
+        </select>
+        <input type="submit" value="Add New Song" >
     </form>
-</main>
-
-<body>
-    
+</main>   
 </body>
 </html>
