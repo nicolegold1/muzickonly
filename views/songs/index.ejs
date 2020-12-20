@@ -10,22 +10,23 @@
     <h3>MuzickOnly</h3>
     <nav>
         <a href="/">Home</a>
-        <a href="/song-titles/new">List of songs</a>
+    <a href="/songs/new">Add a song</a>
+
       </nav>
 </head>
 <main>
-    <h1>Choose Songs</h1>
+    <h1> Song Home Page</h1>
+    <% if(!songs.length){ %>
+        <p>You have no songs!</p>
+    <% } %>
     <ul>
-        <% songs.forEach(playlist => { %>
-            <li>
-              <a href="/songs/<%= song._id %> "> <%= song.name %>  </a>
-            </li>
-           <% }) %>
-     </ul>
-     <button>submit</button>
-
+        <% songs.forEach(song => { %>
+         <li>
+             <a href="/songs/<%= song._id %>"><%= song.title %> - <%= song.artist%></a>
+         </li> 
+        <% }) %>
     </ul>
-    
+     
 </main>
 </body>
 </html>
