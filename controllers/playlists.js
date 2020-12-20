@@ -98,8 +98,13 @@ router.delete("/:id", function(req, res){
   db.Playlist.findByIdAndDelete(req.params.id, function(err, deletedPlaylist){
     
     if(err) return res.send(err);
+    
+    db.Song.remove({playlist: deletedPlaylist._id}, function(err, deletedSongs){
+      if(err) return res.send(err);
 
-    return res.redirect("/playlists");
+      return res.redirect("/playlists")
+    });
+
   });
 });
 
