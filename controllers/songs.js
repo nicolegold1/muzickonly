@@ -116,17 +116,10 @@ router.get("/:id/edit", function(request, response){
 //write update route
 //update PUT/PATCH - /songs/index -> functional
 
-router.put("/:index", function(request, response){
-    const index = request.params.index;
-    const newSongData = request.body;
-
-    const songLocation = db.Song.findIndex(function(song){
-        return song._id === parseInt(index)
-    
-    });
+router.put("/:id", function(request, response){
     
     db.Song.findByIdAndUpdate(
-        id,
+        request.params.id,
     {
         $set: {
             ...request.body
@@ -134,10 +127,10 @@ router.put("/:index", function(request, response){
     },
     {new: true,},
 
-    function(error,UpdatedSong){
+    function(error, updatedSong){
         if(error){
             console.log(error);
-            return response.send("Internal Server Error");
+            return response.send(error);
         } else {
             return response.redirect(`/songs/${updatedSong._id}`);
         }

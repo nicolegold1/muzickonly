@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit song details</title>
+</head>
+<body>
+    <header>
+        <h3>MuzickOnly</h3>
+        <nav>
+            <a href="/">Home</a> 
+            <a href="/song">All Songs</a> 
+        </nav>
+    </header>
+
+    <main>
+        <h1>Edit Song</h1>
+        <form action="/songs/<%= song._id %>?_method=PUT" method="POST">
+            <p>
+            <input type="text" name="title" value ="<%= song.title %>" required >
+            </p>
+            <p>
+            <input type="text" name="artist" value ="<%= song.artist %>" required >
+            </p>
+
+            <input type="submit" value="Update Song">
+        </form>
+    </main>
+</body>
+</html>
