@@ -46,9 +46,11 @@ router.post("/", function(req, res){
 
 // Show - GET - /playlists/index -> Presentation
 router.get("/:id", function(req, res){
-  const id = req.params.id;
     //mongoose
-    db.Playlist.findById(id, function(err, foundPlaylist){
+    db.Playlist
+    .findById(req.params.id)
+    .populate("songs")
+    .exec(function(err, foundPlaylist){
 
       if(err) return res.send(err)
 
