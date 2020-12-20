@@ -87,17 +87,17 @@ router.get("/:id", function(request, response) {
 // write Delete route
 
 router.delete("/:id", function(request, response) {
-    const id = request.params.id;
+    db.Song.findByIdAndDelete(request.params.id, function(error, deletedSong) {
+        if (error) return response.send(error);
 
-    db.Song.findByIdAndDelete(id, function(error, deletedSong) {
+        db.Playlist.findById(deletedSong.playlist, function(error, foundPlaylist){
+            foundPlaylist.songs.remove(deletedSong);
+            foundPlaylist.save();
 
-        if(error){
-            console.log(error);
-            return response.send("Internal Server Error");
-        } else {
-            return response.redirect("/songs");
-        }
-    });
+           return response.redirect("/songs");
+        });
+     });
+
 });
 
 // Write Edit Route
