@@ -9,6 +9,7 @@ const songSchema = new mongoose.Schema(
 {
     title:{ type: String, required: true},
     artist: { type: String, required: true},
+    playlist: { type: mongoose.Schema.Types.ObjectId, ref: "Playlist" }
 },
 {timestamps: true}
 );
