@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Playlist Details</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/styles/main.css">
+
+  <!-- Scripts -->
+  <script src="/scripts/app.js" defer></script>
 </head>
 <body>
   <header>
@@ -12,11 +18,12 @@
       <a href="/">Home</a>
       <a href="/playlists">Explore Playlists</a>
       <a href="/playlists/new">Create a Playlist</a>
+      <a href="/songs/new">Add a Song</a>
     </nav>
   </header>
   <main>
     <h1><%= playlist.name %></h1>
-    <a href="/playlists/<%= playlist._id %>/edit ">Edit</a>
+    
     
       <h3>Mood: <%= playlist.mood %></h3>
       <h3>Description: <%= playlist.description %></h3>
@@ -24,7 +31,7 @@
       <ul>
         <% playlist.songs.forEach(song => { %>
          <li>
-           <a href="/songs/<%= song._id %> "><%= song.title %> - <%= song.name %></a>
+           <a href="/songs/<%= song._id %> "><%= song.title %> - <%= song.artist %></a>
          </li>
         <% }) %>
       </ul>
@@ -32,6 +39,8 @@
     <form action="/playlists/<%= playlist._id %>?_method=DELETE" method="POST">
       <input type="submit" value="Delete Playlist">
     </form>
+    <a href="/songs/new">Add a Song</a>
+    <a href="/playlists/<%= playlist._id %>/edit ">Edit Playlist</a>
   </main>
 </body>
 </html>
