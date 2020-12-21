@@ -7,20 +7,24 @@
 </head>
 <body>
   <header>
-  <nav></nav>
-  <a href="/">Home</a>
-  <a href="/songs">Songs</a>
-</nav>
-</header>
+    <h3>MuzickOnly</h3>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/playlists">Explore Playlists</a>
+      <a href="/playlists/new">Create a Playlists</a>
+      <a href="/songs/new">Add a Song</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Song Detail</h1>
+    
+    <p><%= song.title %> - <%= song.artist%></p>
+    <a href="/playlists/<%=song.playlist._id%>"><%=song.playlist.name%></a>
+    <a href="/songs/<%= song._id %>/edit">Edit Song Details</a> 
+    <form action="/songs/<%=song._id%>?_method=DELETE" method=POST>
+      <input type="submit" value="Delete Song">
+    </form>
+  </main>
 </body>
-<main>
-  <h1>Song Detail</h1>
-  
-  <p><%= song.title %> - <%= song.artist%></p>
-  <a href="/playlists/<%=song.playlist._id%>"><%=song.playlist.name%></a>
-  <a href="/songs/<%= song._id %>/edit">Edit Song Details</a> 
-  <form action="/songs/<%=song._id%>?_method=DELETE" method=POST>
-    <input type="submit" value="Delete Song">
-  </form>
-</main>
 </html>
