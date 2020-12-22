@@ -26,14 +26,16 @@
   </header>
 
   <main>
-    <h1>Song Detail</h1>
-    
-    <p><%= song.title %> - <%= song.artist%></p>
-    <a href="/playlists/<%=song.playlist._id%>"><%=song.playlist.name%></a>
-    <a href="/songs/<%= song._id %>/edit">Edit Song Details</a> 
-    <form action="/songs/<%=song._id%>?_method=DELETE" method=POST>
-      <input type="submit" value="Delete Song">
-    </form>
+    <div class="show-container">
+      <h1>Song Detail</h1>
+      
+      <p><%= song.title %> - <%= song.artist%></p>
+      <a href="/playlists/<%=song.playlist._id%>"><%=song.playlist.name%></a>
+      <a href="/songs/<%= song._id %>/edit">Edit Song Details</a> 
+      <form action="/songs/<%=song._id%>?_method=DELETE" method=POST>
+        <input id="song-del-btn" type="submit" value="Delete Song">
+      </form>
+    </div>
   </main>
 </body>
 </html>

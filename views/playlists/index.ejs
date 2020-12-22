@@ -24,18 +24,20 @@
     <h3>MuzickOnly</h3>
   </header>
   <main>
-    <h1>Explore All Playlists</h1>
-    <ul>
-      <% playlists.forEach(playlist => { %>
-       <li>
-         <a href="/playlists/<%= playlist._id %> "> <%= playlist.name %>  </a>
-       </li>
-      <% }) %>
-    </ul>
+    <div class="show-container">
+      <h1>Explore All Playlists</h1>
+      <ul>
+        <% playlists.forEach(playlist => { %>
+        <li>
+          <a href="/playlists/<%= playlist._id %> "> <%= playlist.name %>  </a>
+        </li>
+        <% }) %>
+      </ul>
 
-    <% if (playlists.length === 0) { %>
-     <p>No playlists available. <a href="/playlists/new"> Create a playlist.</a></p>
-    <% } %>
+      <% if (playlists.length === 0) { %>
+      <p>No playlists available. <a href="/playlists/new"> Create a playlist.</a></p>
+      <% } %>
+    </div>
   </main>
   
 

@@ -3,6 +3,7 @@ header {
   justify-content: space-between;
   width: 100vw;
   padding: 0 15px;
+  height: 10vh;
 }
 
 nav {
@@ -10,7 +11,6 @@ nav {
   line-height: 100%;
   align-items: center;
   width: 50vw;
-
 }
 
 .navbar-links {

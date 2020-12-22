@@ -24,24 +24,29 @@
   <h3>MuzickOnly</h3>
 </header>
 <main>
-    <h1>Add New Song</h1>
-    <form action="/songs" method="POST">
-        <p>
-          <input type="text" name="title" placeholder ="Title Name" required >
-        </p>
-        <p>
-          <input type="text" name="artist" placeholder ="Artist Name" required >
-        </p>
-        <select name="playlist">
-            <option default>Select a playlist</option>
-            <% playlists.forEach(playlist => { %>
-                <option value="<%= playlist._id %>">
-                    <%=playlist.name %>
-                </option>  
-            <% }) %>
-        </select>
-        <input type="submit" value="Add New Song" >
-    </form>
+   
+    <div class="form-container"> 
+        <h1>Add New Song</h1>
+        <form action="/songs" method="POST">
+            <p>
+            <input type="text" name="title" placeholder ="Title Name" required >
+            </p>
+            <p>
+            <input type="text" name="artist" placeholder ="Artist Name" required >
+            </p>
+            <p>
+            <select name="playlist">
+                <option default>Select a playlist</option>
+                <% playlists.forEach(playlist => { %>
+                    <option value="<%= playlist._id %>">
+                        <%=playlist.name %>
+                    </option>  
+                <% }) %>
+            </select>
+            </p>
+            <input type="submit" value="Add New Song" >
+        </form>
+    </div>
 </main>   
 </body>
 </html>
