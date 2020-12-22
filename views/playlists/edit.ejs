@@ -26,29 +26,30 @@
   </header>
   <main>
     <h1>Update <%= playlist.name %> Details </h1>
-
-    <form action="/playlists/<%= playlist._id %>?_method=PUT" method="POST">
-      <p>
-        <input type="text" name="name" value="<%= playlist.name %>" required >
-      </p>
-      <p>
-      <select name="mood" >
-        <option default><%= playlist.mood %></option>
-        <option value="Happy">Happy</option>
-        <option value="Sad">Sad</option>
-        <option value="Angry">Angry</option>
-        <option value="Romantic">Romantic</option>
-        <option value="Focused">Focused</option>
-        <option value="Dancy">Dancy</option>
-        <option value="Chill">Chill</option>
-        <option value="Motivated">Motivated</option>
-      </select>
-      </p>
-      <p>
-      <textarea type="text" name="description" placeholder="<%= playlist.description %> " cols="25" rows="4" required maxlength="240"><%= playlist.description %></textarea>
-      </p>
-      <input type="submit" value="Update Playlist">
-    </form>
+    <div class="form-container"> 
+      <form action="/playlists/<%= playlist._id %>?_method=PUT" method="POST">
+        <p>
+          <input type="text" name="name" value="<%= playlist.name %>" required >
+        </p>
+        <p>
+        <select name="mood" >
+          <option default><%= playlist.mood %></option>
+          <option value="Happy">Happy</option>
+          <option value="Sad">Sad</option>
+          <option value="Angry">Angry</option>
+          <option value="Romantic">Romantic</option>
+          <option value="Focused">Focused</option>
+          <option value="Dancy">Dancy</option>
+          <option value="Chill">Chill</option>
+          <option value="Motivated">Motivated</option>
+        </select>
+        </p>
+        <p>
+        <textarea type="text" name="description" placeholder="<%= playlist.description %> " cols="25" rows="4" required maxlength="240"><%= playlist.description %></textarea>
+        </p>
+        <input type="submit" value="Update Playlist">
+      </form>
+    </div>
   </main>
 
 </body>

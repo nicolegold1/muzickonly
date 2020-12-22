@@ -25,29 +25,30 @@
   </header>
   <main>
     <h1>Create a Playlist</h1>
-
-    <form action="/playlists" method="POST">
-      <p>
-        <input type="text" name="name" placeholder ="Playlist Name" required >
-      </p>
-      <p>
-      <select name="mood" >
-        <option default>Select a Mood</option>
-        <option value="Happy">Happy</option>
-        <option value="Sad">Sad</option>
-        <option value="Angry">Angry</option>
-        <option value="Romantic">Romantic</option>
-        <option value="Focused">Focused</option>
-        <option value="Dancy">Dancy</option>
-        <option value="Chill">Chill</option>
-        <option value="Motivated">Motivated</option>
-      </select>
-      </p>
-      <p>
-      <textarea type="text" name="description" placeholder="Playlist description" cols="25" rows="4" required maxlength="240"></textarea>
-      </p>
-      <input type="submit" value="Create Playlist">
-    </form>
+    <div class="form-container"> 
+      <form action="/playlists" method="POST">
+        <p>
+          <input type="text" name="name" placeholder ="Playlist Name" required >
+        </p>
+        <p>
+        <select name="mood" >
+          <option default>Select a Mood</option>
+          <option value="Happy">Happy</option>
+          <option value="Sad">Sad</option>
+          <option value="Angry">Angry</option>
+          <option value="Romantic">Romantic</option>
+          <option value="Focused">Focused</option>
+          <option value="Dancy">Dancy</option>
+          <option value="Chill">Chill</option>
+          <option value="Motivated">Motivated</option>
+        </select>
+        </p>
+        <p>
+        <textarea type="text" name="description" placeholder="Playlist description" cols="25" rows="4" required maxlength="240"></textarea>
+        </p>
+        <input type="submit" value="Create Playlist">
+      </form>
+    </div>
   </main>
   
 </body>
