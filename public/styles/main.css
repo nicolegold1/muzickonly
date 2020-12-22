@@ -1,0 +1,17 @@
+@import "./variables/variables.css";
+@import "./components/header.css";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  padding: 0px;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  font-family: "Raleway", sans-seriff;
+  font-weight: 400;
+}
