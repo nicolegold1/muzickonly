@@ -26,8 +26,9 @@
     </header>
 
     <main>
-        <h1>Edit Song</h1>
+    
         <div class="form-container"> 
+            <h1>Edit Song</h1>
             <form action="/songs/<%= song._id %>?_method=PUT" method="POST">
                 <p>
                 <input type="text" name="title" value ="<%= song.title %>" required >

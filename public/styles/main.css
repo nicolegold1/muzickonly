@@ -16,9 +16,62 @@ body {
   font-weight: 400;
 }
 
-main {
+main { 
   height: 90vh;
-  padding: 0px 15px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+div {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container {
+  background-color: var(--secondary-bg);
+  color: var(--secondary-text);
+  width: 35%;
+  height: 50%;
+  padding-top: 15px;
+  border-radius: 15px;
+  font-weight: 300px;
+}
+
+li > a {
+  text-decoration: none;
+  color: var(--primary-text);
+  font-weight: 400;
+  padding: 3.75px 7.5px;
+  border-radius: 15px;
+}
+
+li > a:hover {
+  color: var(--secondary-text);
+  background-color: var(--secondary-bg);
+  opacity: .8;
+  transition: .5s;
+}
+  
+li {
+  list-style-type: none;
+}
+
+div > a {
+  text-decoration: none;
+  color: var(--primary-text);
+  font-weight: 400;
+  padding: 3.75px 7.5px;
+  border-radius: 15px;
+}
+
+div > a:hover {
+  color: var(--secondary-text);
+  background-color: var(--secondary-bg);
+  opacity: .8;
+  transition: .5s;
 }
 
 h1 {
@@ -29,6 +82,11 @@ h3 {
   margin: 0;
 }
 
-ul {
-  margin: 0;
+#song-del-btn {
+  margin-top: 5px;
 }
+
+#playlist-del-btn {
+  margin-bottom: 5px;
+}
+
