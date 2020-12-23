@@ -33,7 +33,7 @@
       <a href="/playlists/<%=song.playlist._id%>"><%=song.playlist.name%></a>
       <a href="/songs/<%= song._id %>/edit">Edit Song Details</a> 
       <form action="/songs/<%=song._id%>?_method=DELETE" method=POST>
-        <input id="song-del-btn" type="submit" value="Delete Song">
+        <input class="del-btn" id="song-del-btn" type="submit" value="Delete Song">
       </form>
     </div>
   </main>

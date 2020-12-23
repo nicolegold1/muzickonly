@@ -1,9 +1,10 @@
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100vw;
   padding: 0 15px;
-  height: 10vh;
+  height: 7.5vh;
 }
 
 nav {
@@ -26,4 +27,5 @@ nav {
   background-color: var(--secondary-bg);
   opacity: .8;
   transition: .5s;
+  transform: scale(1.1);
 }

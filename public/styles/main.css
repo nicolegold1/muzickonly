@@ -17,7 +17,7 @@ body {
 }
 
 main { 
-  height: 90vh;
+  height: 92.5vh;
   padding: 0px;
   display: flex;
   justify-content: center;
@@ -40,6 +40,12 @@ div {
   font-weight: 300px;
 }
 
+.form-container > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 li > a {
   text-decoration: none;
   color: var(--primary-text);
@@ -53,10 +59,12 @@ li > a:hover {
   background-color: var(--secondary-bg);
   opacity: .8;
   transition: .5s;
+  transform: scale(1.1);
 }
   
-li {
+ul {
   list-style-type: none;
+  padding: 0px;
 }
 
 div > a {
@@ -72,6 +80,7 @@ div > a:hover {
   background-color: var(--secondary-bg);
   opacity: .8;
   transition: .5s;
+  transform: scale(1.1);
 }
 
 h1 {
@@ -80,6 +89,34 @@ h1 {
 
 h3 {
   margin: 0;
+}
+
+.submit-btn {
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  border-radius: 15px;
+}
+
+.submit-btn:hover {
+  color: var(--secondary-text);
+  background-color: var(--secondary-bg);
+  opacity: .8;
+  transition: .5s;
+  transform: scale(1.1);
+}
+
+.del-btn{
+  background-color: var(--secondary-bg);
+  color: var(--secondary-text);
+  border-radius: 15px;
+}
+
+.del-btn:hover {
+  color: var(--primary-text);
+  background-color: var(--primary-bg);
+  opacity: .8;
+  transition: .5s;
+  transform: scale(1.1);
 }
 
 #song-del-btn {
