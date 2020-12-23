@@ -3,6 +3,7 @@ const express = require("express");
 const methodOverride = require("method-override");
 
 /* ==== Internal Modules  ==== */
+const db = require("./models");
 const controllers = require("./controllers");
 
 /* ==== Instanced Modules  ==== */
@@ -13,7 +14,7 @@ const PORT = 4000;
 app.set("view engine", "ejs");
 
 /* ==== Middleware ==== */
-app.use(epxress.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 
 //Body Data Middleware
 app.use(express.urlencoded({extended: true}));
@@ -22,6 +23,9 @@ app.use(express.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
 
 /* ==== Routes/Controllers  ==== */
+app.use("/playlists", controllers.playlists);
+app.use("/songs", controllers.songs);
+
 // Home Routes
 app.get("/", function(req,res){
     res.render("home");

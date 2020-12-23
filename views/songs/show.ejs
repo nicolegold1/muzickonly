@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MuzickOnly | Home Page</title>
-
+  <title>Document</title>
+  
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/styles/main.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
-
-
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  
   <!-- Scripts -->
   <script src="/scripts/app.js" defer></script>
 
@@ -18,16 +18,24 @@
 <body>
   <header>
     <nav>
+      <a class="navbar-links" href="/">Home</a>
       <a class="navbar-links" href="/playlists">All Playlists</a>
-      <a class="navbar-links" href="/playlists/new">Create New Playlist</a>
+      <a class="navbar-links" href="/playlists/new">Create a Playlist</a>
       <a class="navbar-links" href="/songs/new">Add a Song</a>
     </nav>
     <h3>MuzickOnly</h3>
   </header>
+
   <main>
     <div class="show-container">
-      <h1>MuzickOnly</h1>
-      <a href="/playlists">Explore All Playlists</a>
+      <h1>Song Detail</h1>
+      
+      <h3><%= song.title %> - <%= song.artist%></h3>
+      <a href="/playlists/<%=song.playlist._id%>"><%=song.playlist.name%></a>
+      <a href="/songs/<%= song._id %>/edit">Edit Song Details</a> 
+      <form action="/songs/<%=song._id%>?_method=DELETE" method=POST>
+        <input class="del-btn" id="song-del-btn" type="submit" value="Delete Song">
+      </form>
     </div>
   </main>
 </body>

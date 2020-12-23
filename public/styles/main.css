@@ -1,0 +1,138 @@
+@import "./variables/variables.css";
+@import "./components/header.css";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  padding: 0px;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  font-family: "Raleway", sans-seriff;
+  font-weight: 400;
+}
+
+main { 
+  height: 92.5vh;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+div {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container {
+  background-color: var(--secondary-bg);
+  color: var(--secondary-text);
+  width: 35%;
+  height: 50%;
+  padding-top: 15px;
+  border-radius: 15px;
+  font-weight: 300px;
+}
+
+.form-container > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.show-container > h3 {
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.show-container > ul > li {
+  margin-bottom: 5px;
+}
+
+li > a {
+  text-decoration: none;
+  color: var(--primary-text);
+  font-weight: 400;
+  padding: 3.75px 7.5px;
+  border-radius: 15px;
+}
+
+li > a:hover {
+  color: var(--secondary-text);
+  background-color: var(--secondary-bg);
+  opacity: .8;
+  transition: .5s;
+  transform: scale(1.1);
+}
+  
+ul {
+  list-style-type: none;
+  padding: 0px;
+}
+
+div > a {
+  text-decoration: none;
+  color: var(--primary-text);
+  font-weight: 400;
+  padding: 3.75px 7.5px;
+  border-radius: 15px;
+}
+
+div > a:hover {
+  color: var(--secondary-text);
+  background-color: var(--secondary-bg);
+  opacity: .8;
+  transition: .5s;
+  transform: scale(1.1);
+}
+
+h1 {
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+.submit-btn {
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  border-radius: 15px;
+}
+
+.submit-btn:hover {
+  color: var(--secondary-text);
+  background-color: var(--secondary-bg);
+  opacity: .8;
+  transition: .5s;
+  transform: scale(1.1);
+}
+
+.del-btn{
+  background-color: var(--secondary-bg);
+  color: var(--secondary-text);
+  border-radius: 15px;
+}
+
+.del-btn:hover {
+  color: var(--primary-text);
+  background-color: var(--primary-bg);
+  opacity: .8;
+  transition: .5s;
+  transform: scale(1.1);
+}
+
+#song-del-btn {
+  margin-top: 5px;
+}
+
+#playlist-del-btn {
+  margin-bottom: 5px;
+}
+

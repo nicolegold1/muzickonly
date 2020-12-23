@@ -1,0 +1,31 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  padding: 0 15px;
+  height: 7.5vh;
+}
+
+nav {
+  display: flex;
+  line-height: 100%;
+  align-items: center;
+  width: 50vw;
+}
+
+.navbar-links {
+  text-decoration: none;
+  color: var(--primary-text);
+  margin-right: 15px;
+  padding: 7.5px;
+  border-radius: 15px;
+}
+
+.navbar-links:hover {
+  color: var(--secondary-text);
+  background-color: var(--secondary-bg);
+  opacity: .8;
+  transition: .5s;
+  transform: scale(1.1);
+}
