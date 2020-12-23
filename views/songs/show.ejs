@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="/styles/main.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   
   <!-- Scripts -->
   <script src="/scripts/app.js" defer></script>
@@ -29,7 +30,7 @@
     <div class="show-container">
       <h1>Song Detail</h1>
       
-      <p><%= song.title %> - <%= song.artist%></p>
+      <h3><%= song.title %> - <%= song.artist%></h3>
       <a href="/playlists/<%=song.playlist._id%>"><%=song.playlist.name%></a>
       <a href="/songs/<%= song._id %>/edit">Edit Song Details</a> 
       <form action="/songs/<%=song._id%>?_method=DELETE" method=POST>

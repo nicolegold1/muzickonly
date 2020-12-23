@@ -1,4 +1,5 @@
 # MuzickOnly - Project One
+<img src="erd.png">
 <img src="resources/Wireframes - Home Page .png">
 <img src="resources/Wireframes - Edit Playlist Details Form.png">
 <img src ="resources/Wireframes - New Song Form (1).png">
@@ -13,4 +14,3 @@ The user has the option to update playlist details, delete a playlist and remove
 - Express
 - Node
 
-![wireframe](/Users/admin/sei/servers/muzickonly/resources/PlaylistHomeDetails.png)
