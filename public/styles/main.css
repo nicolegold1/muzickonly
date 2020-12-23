@@ -46,6 +46,15 @@ div {
   align-items: center;
 }
 
+.show-container > h3 {
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.show-container > ul > li {
+  margin-bottom: 5px;
+}
+
 li > a {
   text-decoration: none;
   color: var(--primary-text);
