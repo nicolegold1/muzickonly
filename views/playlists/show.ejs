@@ -40,7 +40,7 @@
         </ul>
       
       <form action="/playlists/<%= playlist._id %>?_method=DELETE" method="POST">
-        <input id="playlist-del-btn" type="submit" value="Delete Playlist">
+        <input class="del-btn" id="playlist-del-btn" type="submit" value="Delete Playlist">
       </form>
       <a href="/songs/new">Add a Song</a>
       <a href="/playlists/<%= playlist._id %>/edit ">Edit Playlist</a>
