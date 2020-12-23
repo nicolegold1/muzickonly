@@ -63,7 +63,7 @@ router.post("/", function (request , response ){
                 foundPlaylist.songs.push(createdSong);
                 foundPlaylist.save();
 
-                return response.redirect("/songs");
+                return response.redirect("/playlists");
             });
     });
 
@@ -94,7 +94,7 @@ router.delete("/:id", function(request, response) {
             foundPlaylist.songs.remove(deletedSong);
             foundPlaylist.save();
 
-           return response.redirect("/songs");
+           return response.redirect("/playlists");
         });
      });
 
