@@ -32,6 +32,4 @@ app.get("/", function(req,res){
 });
 
 /* ==== Server Listener  ==== */
-app.listen(PORT, function(){
-    console.log(`MuzickOnly is live at http://localhost:${PORT}/`)
-});
+app.listen(process.env.PORT || 3000);
